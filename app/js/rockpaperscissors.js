@@ -24,13 +24,13 @@ function randomPlay() {
 function getPlayerMove(move) {
     // If a move is given, your expression should evaluate to that move.
     // If move is not specified / is null, your expression should run getInput()
-    return /* Your Expression */;
+    return "You played " + move;
 }
 
 function getComputerMove(move) {
     // If a move is given, your expression should evaluate to that move.
     // If move is not specified / is null, your expression should run randomPlay()
-    return /* Your Expression */;
+    return "The computer played " + move;
 }
 
 function getWinner(playerMove,computerMove) {
