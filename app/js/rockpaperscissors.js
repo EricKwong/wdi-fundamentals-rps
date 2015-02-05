@@ -37,30 +37,14 @@ function getWinner(playerMove,computerMove) {
     if (playerMove == computerMove) {
         return "tie";
     } else if (playerMove == "rock") {
-        if (computerMove == "scissors") {
-            return "player";
-        }   
-        else {
-            return "computer";
-        }
+        (computerMove == "scissors")? "player" : "computer"
       }
       else if (playerMove == "scissors") {
-        if (computerMove == "paper"){
-            return "player";
-        }   
-        else {
-            return "computer";
-        }    
+        (computerMove == "paper")? "player" : "computer"    
       }
       else if (playerMove == "paper"){
-        if (computerMove == "rock"){
-            return "player";
-        }
-        else {
-            return "computer";
-        }
+        (computerMove == "rock")? "player" : "computer"
       }
-    }
 }
 
 function playToFive() {
