@@ -34,10 +34,33 @@ function getComputerMove(move) {
 }
 
 function getWinner(playerMove,computerMove) {
-    // This function should either give us back 'player', 'computer', or 'tie'.
-    // The rules of the game are that rock beats scissors, scissors beats paper, and paper beats rock.
-    // Assume that the only possible input values we can get are 'rock', 'paper', and 'scissors'.
-
+    if (playerMove == computerMove) {
+        return "tie";
+    } else if (playerMove == "rock") {
+        if (computerMove == "scissors") {
+            return "player";
+        }   
+        else {
+            return "computer";
+        }
+      }
+      else if (playerMove == "scissors") {
+        if (computerMove == "paper"){
+            return "player";
+        }   
+        else {
+            return "computer";
+        }    
+      }
+      else if (playerMove == "paper"){
+        if (computerMove == "rock"){
+            return "player";
+        }
+        else {
+            return "computer";
+        }
+      }
+    }
 }
 
 function playToFive() {
