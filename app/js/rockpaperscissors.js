@@ -23,8 +23,7 @@ function randomPlay() {
 
 function getPlayerMove(move) {
     if (move == null) {
-        move = getInput();
-        return "You played " + move;
+        return "You played " + getInput();
     } else {
         return "You played " + move;
     }
