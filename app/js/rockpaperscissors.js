@@ -22,32 +22,25 @@ function randomPlay() {
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
-    if (move == null) {
-        return "You played " + getInput();
-    } else {
-        return "You played " + move;
-    }
+    return move || getInput();
 }
 
 function getComputerMove(move) {
-    if (move == null) {
-        return "The computer played " + randomPlay();
-    } else {
-        return "The computer played " + move;
-    }
+    return move || randomPlay();
 }
 
 function getWinner(playerMove,computerMove) {
+    console.log("Player chose " + playerMove + " while Computer chose " + computerMove + ".");
     if (playerMove == computerMove) {
         return "tie";
     } else if (playerMove == "rock") {
-        (computerMove == "scissors")? "player" : "computer"
+        return (computerMove == "scissors")? "player" : "computer"
       }
       else if (playerMove == "scissors") {
-        (computerMove == "paper")? "player" : "computer"    
+        return (computerMove == "paper")? "player" : "computer"    
       }
       else if (playerMove == "paper"){
-        (computerMove == "rock")? "player" : "computer"
+        return (computerMove == "rock")? "player" : "computer"
       }
 }
 
@@ -55,12 +48,18 @@ function playToFive() {
     console.log("Let's play Rock Paper Scissors");
     var playerWins = 0;
     var computerWins = 0;
-    // This function should continue to play Rock Paper Scissors until either the player or the computer has won five times.
-
-    // After each 'round', display some text in the console indicating who played what, who won, and what the current scoreboard looks like.
-    // For example,
-    //  console.log("Player chose " + playerMove + " while Computer chose " + computerMove);
-    //  console.log("The score is currently " + playerWins + " to " + computerWins + "\n");
-    return [playerWins, computerWins];
+    var winner = ""
+    while (playerWins != 5 && computerWins !=5){
+        winner = getWinner(getPlayerMove(), getComputerMove());
+        if (winner == "player"){
+            playerWins++;
+        } else if (winner == "computer") {
+            computerWins++;
+        } else {
+            console.log("Tie\n");
+        }
+        console.log("The score is currently " + playerWins + " to " + computerWins + ".\n");
+    }
+    return (playerWins > computerWins)? "Player Wins" : "Computer Wins"
 }
 
