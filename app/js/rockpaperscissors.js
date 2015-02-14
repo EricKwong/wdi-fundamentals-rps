@@ -56,7 +56,7 @@ function playToFive() {
         } else if (winner == "computer") {
             computerWins++;
         } else {
-            console.log("Tie\n");
+            console.log("Tie.");
         }
         console.log("The score is currently " + playerWins + " to " + computerWins + ".\n");
     }
