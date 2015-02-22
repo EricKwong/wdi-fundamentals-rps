@@ -39,7 +39,7 @@ function getWinner(playerMove,computerMove) {
       else if (playerMove == "scissors") {
         return (computerMove == "paper")? "player" : "computer"    
       }
-      else if (playerMove == "paper"){
+      else {
         return (computerMove == "rock")? "player" : "computer"
       }
 }
