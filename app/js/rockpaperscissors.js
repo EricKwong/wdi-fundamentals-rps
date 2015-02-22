@@ -30,10 +30,6 @@ function getComputerMove(move) {
 }
 
 function getWinner(playerMove,computerMove) {
-    if (playerMove != "rock" || playerMove != "scissors" || playerMove != "paper") {
-        console.log("Invalid entry.");
-        playerMove = getInput();
-    }
     console.log("Player chose " + playerMove + " while Computer chose " + computerMove + ".");
     if (playerMove == computerMove) {
         return "tie";
